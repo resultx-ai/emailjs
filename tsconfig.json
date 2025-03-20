@@ -7,5 +7,9 @@
 	],
 	"ts-node": {
 		"transpileOnly": true
+	},
+	"compilerOptions": {
+		"outDir": "./dist",
+		"declaration": true,
 	}
 }

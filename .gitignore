@@ -1,5 +1,6 @@
 .vscode
 node_modules
+dist
 
 *.ini
 *.log
@@ -8,4 +9,5 @@ node_modules
 *~
 
 .DS_Store
-package-lock.json
+
+.idea

@@ -1,23 +1,23 @@
 {
-	"name": "emailjs",
+	"name": "@resultx-ai/emailjs",
 	"description": "send text/html emails and attachments (files, streams and strings) from node.js to any smtp server",
-	"version": "4.0.3",
+	"version": "5.0.0",
 	"author": "eleith",
 	"contributors": [
 		"izuzak",
 		"Hiverness",
 		"mscdex",
 		"jimmybergman",
-		"zackschuster"
+		"zackschuster",
+		"jorisguffens"
 	],
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/eleith/emailjs.git"
+		"url": "https://github.com/resultx-ai/emailjs"
 	},
 	"type": "module",
 	"devDependencies": {
 		"@ledge/configs": "23.3.23322",
-		"@rollup/plugin-typescript": "8.3.2",
 		"@types/mailparser": "3.4.0",
 		"@types/node": "12.12.6",
 		"@types/smtp-server": "3.5.7",
@@ -29,7 +29,6 @@
 		"eslint-plugin-prettier": "4.0.0",
 		"mailparser": "3.5.0",
 		"prettier": "2.6.2",
-		"rollup": "2.70.2",
 		"smtp-server": "3.11.0",
 		"ts-node": "10.9.1",
 		"tslib": "2.4.0",
@@ -50,16 +49,15 @@
 		"node": ">=12"
 	},
 	"files": [
-		"email.js",
-		"email.ts",
-		"smtp"
+		"dist"
 	],
-	"types": "./email.ts",
+	"types": "./dist/email.d.ts",
 	"exports": {
-		"default": "./email.js"
+		"default": "./dist/email.js"
 	},
 	"scripts": {
-		"build": "rollup -c rollup.config.ts",
+		"prepublishOnly": "npm run build",
+		"build": "tsc --build",
 		"lint": "eslint *.ts \"+(smtp|test)/*.ts\"",
 		"pretest": "yarn build",
 		"test": "ava"
